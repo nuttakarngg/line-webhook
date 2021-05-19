@@ -19,7 +19,7 @@ app.post('/line-webhook',(request,response)=>{
         console.log(`Message from chat : ${ message }`);
     
     }
-    lineMessaging.replyMessage(replyToken, message).then(function (rs) {
+    lineMessaging.reply(replyToken, message).then(function (rs) {
 
         console.log(`Reply message result : ${ rs }`);
 
