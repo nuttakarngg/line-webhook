@@ -12,11 +12,11 @@ app.get('/',(request,response)=>{
 })
 app.post('/line-webhook',(request,response)=>{
     if(request.body.events.length > 0){
-        let replyToken = request.body.events[0].replyToken;
-        let msg = request.body.events[0].message.text;
+        var replyToken = request.body.events[0].replyToken;
+        var message = request.body.events[0].message.text;
         
         console.log(`Message token : ${ replyToken }`);
-        console.log(`Message from chat : ${ msg }`);
+        console.log(`Message from chat : ${ message }`);
     
     }
     lineMessaging.replyMessage(replyToken, message).then(function (rs) {
