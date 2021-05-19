@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.get('/',(request,response)=>{
     response.send('App is running...');
 })
-app.post('/ line-webhook',(request,response)=>{
+app.post('/line-webhook',(request,response)=>{
     if(request.body.events.length > 0){
         let replyToken = request.body.events[0].replyToken;
         let msg = request.body.events[0].message.text;
