@@ -17,7 +17,7 @@ class LineAPIService {
                     replyToken: replyToken,
                     messages: [{
                         type: 'text',
-                        text: 'test'
+                        text: messages
                     }]
                 })
                 return request.post({
