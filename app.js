@@ -5,7 +5,7 @@ const {CHANNEL_SECRET,CHANNEL_ACCESS_TOKEN} = require('./config');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false}))
 app.get('/',(request,response)=>{
     response.send('App is running...');
 })
