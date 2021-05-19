@@ -4,14 +4,17 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "actions-on-google": "^2.14.0",
     "body-parser": "^1.19.0",
+    "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.17.1",
+    "firebase": "^8.6.1",
     "request": "^2.88.2"
   }
 }
