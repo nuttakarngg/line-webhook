@@ -16,7 +16,7 @@ app.post('/webhook',(request,response)=>{
     console.log(`Message token : ${ replyToken }`);
     console.log(`Message from chat : ${ msg }`);
 
-    res.json({
+    response.json({
         status: 200,
         message: `Webhook is working!`
     });
