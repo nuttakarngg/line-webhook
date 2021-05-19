@@ -10,12 +10,12 @@ app.get('/',(request,response)=>{
     response.send('App is running...');
 })
 app.post('/webhook',(request,response)=>{
-    let replyToken = request.body.events[0].replyToken;
-    let msg = request.body.events[0].message.text;
+    // let replyToken = request.body.events[0].replyToken;
+    // let msg = request.body.events[0].message.text;
     
-    console.log(`Message token : ${ replyToken }`);
-    console.log(`Message from chat : ${ msg }`);
-
+    // console.log(`Message token : ${ replyToken }`);
+    // console.log(`Message from chat : ${ msg }`);
+    console.log(request.body)
     response.json({
         status: 200,
         message: `Webhook is working!`
