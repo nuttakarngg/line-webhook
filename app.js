@@ -9,6 +9,18 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.get('/',(request,response)=>{
     response.send('App is running...');
 })
+app.post('/webhook',(request,response)=>{
+    let replyToken = request.body.events[0].replyToken;
+    let msg = request.body.events[0].message.text;
+    
+    console.log(`Message token : ${ replyToken }`);
+    console.log(`Message from chat : ${ msg }`);
+
+    res.json({
+        status: 200,
+        message: `Webhook is working!`
+    });
+})
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{console.log(`app is running on port:${PORT}`)})
 
