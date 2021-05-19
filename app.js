@@ -1,7 +1,7 @@
 const express = require('express')
 const request = require('request');
 const bodyParser = require('body-parser')
-const {WebhookClient} = require('dialogflow-fulfillment')
+const {WebhookClient,Payload} = require('dialogflow-fulfillment')
 const {CHANNEL_SECRET,CHANNEL_ACCESS_TOKEN} = require('./config');
 const firebase = require('./firebase');
 const app = express();
@@ -28,7 +28,7 @@ app.post('/line-webhook',(request,response)=>{
 app.post('/dialogflow-webhook', (request, response) => {
     // get agent from request
     let agent = new WebhookClient({request: request, response: response})
-
+    console.log(request.body)
     // create intentMap for handle intent
     let intentMap = new Map();
 
@@ -37,6 +37,8 @@ app.post('/dialogflow-webhook', (request, response) => {
 
     // now agent is handle request and pass intent map
     agent.handleRequest(intentMap)
+    
+
 })
 
 function handleWebHookIntent(agent){
