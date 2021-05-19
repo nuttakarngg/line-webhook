@@ -15,7 +15,7 @@ class LineAPIService {
             try {
                 let body = JSON.stringify({
                     replyToken: replyToken,
-                    messages: messages
+                    messages: "messages"
                 })
                 return request.post({
                     url: apiRoute,
