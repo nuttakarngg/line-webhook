@@ -85,7 +85,7 @@ const sentToDialogflow = request => {
 const myexp = (request, response) => {
     const event = request.body.events[0];
     const { type, source } = event;
-
+    console.log(event)
     if (verifyXLineSignature(request, response)) {
         if (type === 'message' && event.message.type === 'text') {
             sentToDialogflow(request)
