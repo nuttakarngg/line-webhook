@@ -22,7 +22,9 @@ class LineAPIService {
                     headers: headers,
                     body: body
                 }, (err, res, body) => {
-                    console.log('status = ' + res.statusCode+ err);
+                    console.log('status = ' + {url: apiRoute,
+                        headers: headers,
+                        body: body});
                     return resolve(res.statusCode);
                 });
             }
